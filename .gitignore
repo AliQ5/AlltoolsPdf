@@ -1,0 +1,50 @@
+# ── Build & Distribution ───────────────────────────────────────────────────────
+dist/
+build/
+*.spec.bak
+
+# ── Python ─────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+.eggs/
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+
+# ── Node / Frontend ────────────────────────────────────────────────────────────
+ui/node_modules/
+ui/.cache/
+
+# ── Test outputs ───────────────────────────────────────────────────────────────
+Test/output/
+Test/video_output/
+Test/pdf_output/
+Test/_temp_*.png
+
+# ── Environment & Secrets ──────────────────────────────────────────────────────
+.env
+.env.*
+*.key
+*.pem
+
+# ── OS files ───────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ────────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.user
+
+# ── Temp files ─────────────────────────────────────────────────────────────────
+*.tmp
+*.bak
+temp_page_*.png

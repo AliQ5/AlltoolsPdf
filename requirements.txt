@@ -1,0 +1,9 @@
+pymupdf
+Pillow
+customtkinter
+pdf2docx
+comtypes
+pdfplumber
+pandas
+openpyxl
+python-pptx

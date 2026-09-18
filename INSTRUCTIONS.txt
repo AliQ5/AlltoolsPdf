@@ -1,0 +1,202 @@
+==============================================================
+  AllTools — User Instructions
+  Author : Ali Qureshi
+  Version: 1.0
+==============================================================
+
+Thank you for using AllTools — a free, offline desktop utility
+for PDF, Image, Video and Office file operations.
+
+--------------------------------------------------------------
+LAUNCHING THE APP
+--------------------------------------------------------------
+  • If you have the installer / portable build:
+      Double-click  AllTools.exe
+
+  • If you are running from source (developer mode):
+      1. Install Python 3.10+
+      2. Run:  pip install -r requirements.txt
+      3. Build the UI:
+             cd ui
+             npm install && npm run build
+             cd ..
+      4. Run:  python main.py
+
+--------------------------------------------------------------
+GENERAL USAGE
+--------------------------------------------------------------
+  1. Select a category from the left sidebar
+     (PDF Tools, Image Tools, Video Tools, Office → PDF, PDF → Office)
+
+  2. Click the tool you want to use.
+
+  3. Fill in any required fields (dimensions, degrees, password, etc.)
+
+  4. Click the upload box or drag & drop your file(s) onto it.
+
+  5. A save dialog will appear — choose where to save the output.
+
+  6. A green toast notification confirms success.
+     A red toast means something went wrong (message shown).
+
+--------------------------------------------------------------
+PDF TOOLS
+--------------------------------------------------------------
+  Merge PDFs
+    • Select multiple PDF files.
+    • They will be combined in the order you select them.
+
+  Split PDF
+    • Select one PDF. Choose an output folder.
+    • Each page is saved as a separate PDF file.
+
+  Compress PDF
+    • Removes unused objects and compresses streams.
+    • Does not reduce visual quality.
+
+  Rotate PDF
+    • Enter degrees: 90, 180 or 270.
+    • All pages are rotated.
+
+  Crop PDF
+    • Enter percentages to crop from each edge (0–100).
+    • Example: left=10, top=5, right=10, bottom=5
+      crops 10% from left/right and 5% from top/bottom.
+
+  Resize PDF
+    • Enter width and height in points (pt).
+    • 1 pt = 1/72 inch.
+    • Common sizes:
+        A4     : 595 x 842
+        Letter : 612 x 792
+        A5     : 420 x 595
+
+  Protect PDF
+    • Enter a password. The PDF will be AES-256 encrypted.
+    • Keep your password safe — there is no recovery option.
+
+  Unlock PDF
+    • Enter the current password to remove protection.
+    • The output PDF will have no password.
+
+  Flatten PDF
+    • Removes interactive form fields and annotations.
+    • Useful before sharing a form-filled PDF.
+
+  Extract Pages
+    • Enter page ranges, e.g.:  1-3,5,8-10
+    • Pages are 1-indexed.
+
+  Remove Pages
+    • Enter comma-separated page numbers to delete, e.g.:  1,4,7
+    • Pages are 1-indexed.
+
+  Organize PDF
+    • Enter the new page order, e.g.:  3,1,2
+    • Pages are 1-indexed.
+
+  Image to PDF
+    • Select one or more image files (PNG, JPG, WEBP, BMP).
+    • Each image becomes one page in the output PDF.
+
+  PDF to Image
+    • Select a PDF. Choose an output folder.
+    • Each page is saved as a PNG at 150 DPI.
+
+  Extract Images
+    • Pulls all embedded images out of a PDF.
+    • Choose an output folder for the extracted files.
+
+--------------------------------------------------------------
+IMAGE TOOLS
+--------------------------------------------------------------
+  Convert Image
+    • Enter the target format, e.g.:  jpg  png  webp  bmp  gif
+    • PNG with transparency converted to JPG will be
+      white-background composited automatically.
+
+  Resize Image
+    • Enter exact width and height in pixels.
+
+  Crop Image
+    • Enter the bounding box: left, top, right, bottom (pixels).
+    • Example: 0, 0, 400, 300  crops the top-left 400×300 area.
+
+  Rotate Image
+    • Enter degrees (counter-clockwise).
+    • The canvas expands automatically for non-90° angles.
+
+  Flip Image
+    • Enter:  horizontal  or  vertical
+
+  Image Enlarger
+    • Enter a scale multiplier, e.g.:  2.0  (doubles the size)
+    • Values below 1 shrink the image, e.g.:  0.5
+
+  GIF Maker
+    • Select multiple images (in desired order).
+    • Enter frame duration in milliseconds, e.g.:  500
+    • The GIF loops infinitely.
+
+--------------------------------------------------------------
+VIDEO TOOLS
+--------------------------------------------------------------
+  Trim Video
+    • Enter start and end times in seconds, e.g.:  30  90
+
+  Crop Video
+    • Enter pixel coordinates: x1, y1 (top-left) and x2, y2 (bottom-right).
+
+  NOTE: Video processing re-encodes the output and may take
+        some time depending on file size.
+
+--------------------------------------------------------------
+OFFICE → PDF
+--------------------------------------------------------------
+  IMPORTANT: Microsoft Office must be installed on your computer
+  for these conversions. They use COM automation (Word/Excel/PowerPoint).
+
+  Word to PDF   — Supports .docx files
+  Excel to PDF  — Supports .xlsx files
+  PPT to PDF    — Supports .pptx files
+
+--------------------------------------------------------------
+PDF → OFFICE
+--------------------------------------------------------------
+  PDF to Word   — Converts PDF to editable .docx (best for text-heavy PDFs)
+  PDF to Excel  — Extracts tables from PDF to .xlsx spreadsheet
+  PDF to PPT    — Each PDF page becomes a slide in a .pptx presentation
+
+  NOTE: PDF → Office conversion quality depends on the PDF structure.
+        Scanned/image-only PDFs may not convert text accurately.
+
+--------------------------------------------------------------
+TIPS & TROUBLESHOOTING
+--------------------------------------------------------------
+  • "Not running inside app" toast
+      You opened the HTML file directly in a browser.
+      Launch via AllTools.exe or  python main.py  instead.
+
+  • Office conversion fails
+      Make sure Microsoft Office is installed and not already
+      running another heavy operation.
+
+  • Video processing is slow
+      This is normal — video re-encoding is CPU-intensive.
+      Shorter clips finish faster.
+
+  • PDF protect/unlock
+      Both operations require you to know the existing password.
+      AllTools cannot crack or bypass PDF encryption.
+
+--------------------------------------------------------------
+AUTHOR & SUPPORT
+--------------------------------------------------------------
+  Author  : Ali Qureshi
+  Project : https://github.com/your-username/alltoolspdf
+  License : MIT (free to use, modify and distribute)
+
+  This software is provided free of charge and as-is.
+  Report issues or suggest features on the GitHub page above.
+
+==============================================================
