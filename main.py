@@ -49,7 +49,10 @@ class Api:
             webview.SAVE_DIALOG,
             save_filename=f'output{default_ext}'
         )
-        return result if result else None
+        if not result:
+            return None
+        # On Windows, pywebview returns a tuple from SAVE_DIALOG — extract the string
+        return result[0] if isinstance(result, (tuple, list)) else result
 
     # ── Common Runner helper ──
     def _run_tool(self, func, *args, success_msg="Done!"):
